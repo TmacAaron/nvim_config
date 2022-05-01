@@ -207,6 +207,8 @@ return packer.startup(function()
     -- autopairs
     use 'windwp/nvim-autopairs'
 
+    -- repeat 
+    use 'tpope/vim-repeat'
     -- rename
     -- use {
     --     'filipdutescu/renamer.nvim',

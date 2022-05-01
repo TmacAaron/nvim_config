@@ -444,6 +444,11 @@ _G.packer_plugins = {
     path = "/home/yyt/.local/share/nvim/site/pack/packer/start/vim-matchup",
     url = "https://github.com/andymass/vim-matchup"
   },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/yyt/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
   ["vim-startuptime"] = {
     loaded = true,
     path = "/home/yyt/.local/share/nvim/site/pack/packer/start/vim-startuptime",
