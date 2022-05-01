@@ -1,0 +1,14 @@
+{
+    "debug-config-header": {
+        "prefix": "dheader",
+        "body": [
+            "{",
+            "\"version\": \"0.2.0\",",
+            "\"configurations\": [",
+            "{}",
+            "]",
+            "}"
+        ],
+        "description": "Debug config header"
+    }
+}
