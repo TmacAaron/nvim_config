@@ -296,7 +296,7 @@ local mappings_l = {
     -- },
     h = {
         name = "highlight",
-        d = {":HSRmHighlight rm_all<cr>", "Delete all"}
+        d = { ":HSRmHighlight rm_all<cr>", "Delete all" }
     },
 
     v = {
@@ -344,7 +344,14 @@ local mappings_l = {
             b = { "<cmd>lua require('telescope').extensions.dap.list_breakpoints{}<cr>", "breakpoints" },
         },
         -- todo
-        t = { "<cmd>TodoTelescope<cr>", "Todo" }
+        t = { "<cmd>TodoTelescope<cr>", "Todo" },
+        g = {
+            name = "Git",
+            s = {"<cmd>Telescope git_status<cr>", "Git Status"},
+            b = {"<cmd>Telescope git_branches<cr>", "Checkout Branches"},
+            c = {"<cmd>Telescope git_commits<cr>", "Checkout Commits"},
+            f = {"<cmd>Telescope git_files<cr>", "Files"},
+        }
     },
 
     -- toggleterm
@@ -359,6 +366,24 @@ local mappings_l = {
     s = {
         name = "send to terminal",
         l = { "<cmd>ToggleTermSendCurrentLine<cr>", "current line" }
+    },
+
+    -- git
+    g = {
+        name = "Git",
+        s = "Stage Hunk",
+        S = "Stage Buffer",
+        r = "Reset Hunk",
+        R = "Reset Buffer",
+        u = "Undo Stage Hunk",
+        h = "Preview Hunk",
+        B = "Toggle Blame",
+        b = "Line Blame",
+        t = "Diff",
+        T = "Diff",
+        d = "Toggle Delete",
+        f = { "<cmd>DiffviewFileHistory<cr>", "File History" },
+        p = { "<cmd>DiffviewOpen<cr>", "Diff Project" },
     },
 
     -- debug(dap)
@@ -376,8 +401,8 @@ local mappings_l = {
     -- hop
     ["w"] = { "<cmd>lua require'hop'.hint_words()<cr>", "hop words" },
     ["l"] = { "<cmd>lua require'hop'.hint_lines()<cr>", "hop lines" },
-    ["g"] = { "<cmd>lua require'hop'.hint_char1()<cr>", "hop 1 char" },
-    ["G"] = { "<cmd>lua require'hop'.hint_char2()<cr>", "hop 2 char" },
+    ["i"] = { "<cmd>lua require'hop'.hint_char1()<cr>", "hop 1 char" },
+    ["I"] = { "<cmd>lua require'hop'.hint_char2()<cr>", "hop 2 char" },
     ["p"] = { "<cmd>lua require'hop'.hint_patterns()<cr>", "hop patterns" },
 
     -- comment
@@ -417,18 +442,18 @@ local mappings_l = {
     -- cmake
     c = {
         name = "cmake",
-        c = {"<cmd>CMake configure<cr>", "Configure Project"},
-        t = {"<cmd>CMake select_target<cr>", "Select Target"},
-        T = {"<cmd>CMake select_build_type<cr>", "Select Build Type"},
-        b = {"<cmd>CMake build<cr>", "Build Target"},
-        B = {"<cmd>CMake build_all<cr>", "Build all"},
-        r = {"<cmd>CMake run<cr>", "Run Target"},
-        R = {"<cmd>CMake build_and_run<cr>", "Build and Run Target"},
-        d = {"<cmd>CMake debug<cr>", "Debug Target"},
-        D = {"<cmd>CMake build_and_debug<cr>", "Build and Debug Target"},
-        q = {"<cmd>CMake cancel<cr>", "Cancel"},
-        s = {"<cmd>CMake set_target_args<cr>", "Set Arguments for Target"},
-        n = {"<cmd>CMake create_project<cr>", "Create new CMake Project"},
+        c = { "<cmd>CMake configure<cr>", "Configure Project" },
+        t = { "<cmd>CMake select_target<cr>", "Select Target" },
+        T = { "<cmd>CMake select_build_type<cr>", "Select Build Type" },
+        b = { "<cmd>CMake build<cr>", "Build Target" },
+        B = { "<cmd>CMake build_all<cr>", "Build all" },
+        r = { "<cmd>CMake run<cr>", "Run Target" },
+        R = { "<cmd>CMake build_and_run<cr>", "Build and Run Target" },
+        d = { "<cmd>CMake debug<cr>", "Debug Target" },
+        D = { "<cmd>CMake build_and_debug<cr>", "Build and Debug Target" },
+        q = { "<cmd>CMake cancel<cr>", "Cancel" },
+        s = { "<cmd>CMake set_target_args<cr>", "Set Arguments for Target" },
+        n = { "<cmd>CMake create_project<cr>", "Create new CMake Project" },
     }
 }
 
@@ -455,8 +480,8 @@ local mappings = {
         o = "close other windows",
         q = "close window",
         t = "open as tab",
-        w = {"<cmd>TZFocus<cr>", "Toggle Min/Max window"},
-        f = {"<cmd>TZAtaraxis<cr>", "Toggle Focus"}
+        w = { "<cmd>TZFocus<cr>", "Toggle Min/Max window" },
+        f = { "<cmd>TZAtaraxis<cr>", "Toggle Focus" }
     },
 
     t = {
@@ -484,8 +509,8 @@ local mappings = {
         -- swap
         n = "swap next parameter",
         p = "swap previous parameter",
-        i = {"<cmd>ISwap<cr>", "swap"},
-        w = {"<cmd>ISwapWith<cr>", "swap with"},
+        i = { "<cmd>ISwap<cr>", "swap" },
+        w = { "<cmd>ISwapWith<cr>", "swap with" },
         --
         v = "source vimrc(luafile)"
     },
@@ -495,7 +520,7 @@ local mappings = {
         d = "definition",
         D = "declaration",
         h = "hover diagnostic",
-        p = {"<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "preview definition"}
+        p = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "preview definition" }
     },
 
     ["+"] = "number +1",
@@ -569,9 +594,9 @@ local opts_z = {
 
 local mappings_z = {
     f = {
-        c = {"zfac", "class"},
-        f = {"zfaf", "function"},
-    l = {":loadview", "Load View"}
+        c = { "zfac", "class" },
+        f = { "zfaf", "function" },
+        l = { ":loadview", "Load View" }
     },
 }
 
@@ -597,17 +622,17 @@ local mappings_v = {
         },
         h = {
             name = "highlight",
-            h = {":<c-u>HSHighlight 0<cr>", "Black"},
-            y = {":<c-u>HSHighlight 1<cr>", "Yellow"},
-            a = {":<c-u>HSHighlight 2<cr>", "Aqua"},
-            p = {":<c-u>HSHighlight 3<cr>", "Purple"},
-            r = {":<c-u>HSHighlight 4<cr>", "Red"},
-            g = {":<c-u>HSHighlight 5<cr>", "Green"},
-            l = {":<c-u>HSHighlight 6<cr>", "Blue"},
-            f = {":<c-u>HSHighlight 7<cr>", "Pink"},
-            w = {":<c-u>HSHighlight 8<cr>", "White"},
-            b = {":<c-u>HSHighlight 9<cr>", "Brown"},
-            d = {":<c-u>HSRmHighlight<cr>", "Delete"},
+            h = { ":<c-u>HSHighlight 0<cr>", "Black" },
+            y = { ":<c-u>HSHighlight 1<cr>", "Yellow" },
+            a = { ":<c-u>HSHighlight 2<cr>", "Aqua" },
+            p = { ":<c-u>HSHighlight 3<cr>", "Purple" },
+            r = { ":<c-u>HSHighlight 4<cr>", "Red" },
+            g = { ":<c-u>HSHighlight 5<cr>", "Green" },
+            l = { ":<c-u>HSHighlight 6<cr>", "Blue" },
+            f = { ":<c-u>HSHighlight 7<cr>", "Pink" },
+            w = { ":<c-u>HSHighlight 8<cr>", "White" },
+            b = { ":<c-u>HSHighlight 9<cr>", "Brown" },
+            d = { ":<c-u>HSRmHighlight<cr>", "Delete" },
         }
     },
 }

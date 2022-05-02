@@ -160,6 +160,13 @@ return packer.startup(function()
     -- cmake
     use 'Shatur/neovim-cmake'
 
+    -- git
+    use {
+        'lewis6991/gitsigns.nvim',
+        -- tag = 'release' -- To use the latest release
+    }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
     -- file tree
     use {
         'kyazdani42/nvim-tree.lua',
@@ -193,6 +200,7 @@ return packer.startup(function()
     use "ahmedkhalf/project.nvim"
     use 'nvim-telescope/telescope-dap.nvim'
 
+    -- quickly jump
     use {
         'phaazon/hop.nvim',
         branch = 'v1', -- optional but strongly recommended
@@ -207,7 +215,7 @@ return packer.startup(function()
     -- autopairs
     use 'windwp/nvim-autopairs'
 
-    -- repeat 
+    -- repeat
     use 'tpope/vim-repeat'
     -- rename
     -- use {

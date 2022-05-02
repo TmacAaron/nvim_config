@@ -1,6 +1,8 @@
 require('configs.lsp')
 require('configs.dap')
 require('configs.cmake')
+require('configs.gitsigns')
+require('configs.diffview')
 require('configs.goto_pre')
 require('configs.icons')
 require('configs.alpha')
