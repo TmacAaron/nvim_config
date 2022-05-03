@@ -30,7 +30,7 @@ local Rule = require('nvim-autopairs.rule')
 local cond = require('nvim-autopairs.conds')
 
 npairs.add_rules {
-    Rule("<", ">")
+    Rule("<", ">", {"lua", "vim"})
         -- don't add a pair if the next character is %
         -- :with_pair(cond.not_after_regex("%%"))
         -- don't add a pair if  the previous character is xxx
@@ -82,29 +82,29 @@ npairs.add_rules {
     --     :with_move(cond.none())
     --     :with_del(cond.none()),
 
-    -- Rule(' ', ' ')
-    --     :with_pair(function (opts)
-    --         local pair = opts.line:sub(opts.col - 1, opts.col)
-    --         return vim.tbl_contains({ '()', '[]', '{}' }, pair)
-    --     end),
-    -- Rule('( ', ' )')
-    --     :with_pair(function() return false end)
-    --     :with_move(function(opts)
-    --         return opts.prev_char:match('.%)') ~= nil
-    --     end)
-    --     :use_key(')'),
-    -- Rule('{ ', ' }')
-    --     :with_pair(function() return false end)
-    --     :with_move(function(opts)
-    --         return opts.prev_char:match('.%}') ~= nil
-    --     end)
-    --     :use_key('}'),
-    -- Rule('[ ', ' ]')
-    --     :with_pair(function() return false end)
-    --     :with_move(function(opts)
-    --         return opts.prev_char:match('.%]') ~= nil
-    --     end)
-    --     :use_key(']')
+    Rule(' ', ' ')
+        :with_pair(function (opts)
+            local pair = opts.line:sub(opts.col - 1, opts.col)
+            return vim.tbl_contains({ '()', '[]', '{}' }, pair)
+        end),
+    Rule('( ', ' )')
+        :with_pair(function() return false end)
+        :with_move(function(opts)
+            return opts.prev_char:match('.%)') ~= nil
+        end)
+        :use_key(')'),
+    Rule('{ ', ' }')
+        :with_pair(function() return false end)
+        :with_move(function(opts)
+            return opts.prev_char:match('.%}') ~= nil
+        end)
+        :use_key('}'),
+    Rule('[ ', ' ]')
+        :with_pair(function() return false end)
+        :with_move(function(opts)
+            return opts.prev_char:match('.%]') ~= nil
+        end)
+        :use_key(']')
 }
 
 -- local cmp_autopairs = require "nvim-autopairs.completion.cmp"

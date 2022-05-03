@@ -294,6 +294,17 @@ local mappings_l = {
     --     ["1"] = "which_key_ignore",  -- special label to hide it in the popup
     --     b = { function() print("bar") end, "Foobar" } -- you can also pass functions!
     -- },
+    -- bufferline
+    ["1"] = { "<cmd>BufferLineGoToBuffer 1<cr>", "To Buffer 1" },
+    ["2"] = { "<cmd>BufferLineGoToBuffer 2<cr>", "To Buffer 2" },
+    ["3"] = { "<cmd>BufferLineGoToBuffer 3<cr>", "To Buffer 3" },
+    ["4"] = { "<cmd>BufferLineGoToBuffer 4<cr>", "To Buffer 4" },
+    ["5"] = { "<cmd>BufferLineGoToBuffer 5<cr>", "To Buffer 5" },
+    ["6"] = { "<cmd>BufferLineGoToBuffer 6<cr>", "To Buffer 6" },
+    ["7"] = { "<cmd>BufferLineGoToBuffer 7<cr>", "To Buffer 7" },
+    ["8"] = { "<cmd>BufferLineGoToBuffer 8<cr>", "To Buffer 8" },
+    ["9"] = { "<cmd>BufferLineGoToBuffer 9<cr>", "To Buffer 9" },
+
     h = {
         name = "highlight",
         d = { ":HSRmHighlight rm_all<cr>", "Delete all" }
@@ -319,7 +330,7 @@ local mappings_l = {
         name = "find",
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "files" },
         -- mapcmd('<leader>fg', 'Telescope live_grep'),
-        g = { "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>", "grep" },
+        e = { "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw()<cr>", "grep" },
         w = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "word" },
         b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "buffers" },
         h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", "help_tags" },
@@ -347,10 +358,10 @@ local mappings_l = {
         t = { "<cmd>TodoTelescope<cr>", "Todo" },
         g = {
             name = "Git",
-            s = {"<cmd>Telescope git_status<cr>", "Git Status"},
-            b = {"<cmd>Telescope git_branches<cr>", "Checkout Branches"},
-            c = {"<cmd>Telescope git_commits<cr>", "Checkout Commits"},
-            f = {"<cmd>Telescope git_files<cr>", "Files"},
+            s = { "<cmd>Telescope git_status<cr>", "Git Status" },
+            b = { "<cmd>Telescope git_branches<cr>", "Checkout Branches" },
+            c = { "<cmd>Telescope git_commits<cr>", "Checkout Commits" },
+            f = { "<cmd>Telescope git_files<cr>", "Files" },
         }
     },
 

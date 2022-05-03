@@ -258,6 +258,10 @@ return packer.startup(function()
     -- formatter
     use 'mhartington/formatter.nvim'
 
+    -- auto save/load
+    use 'Pocco81/AutoSave.nvim'
+    use 'djoshea/vim-autoread'
+
     if packer_bootstrap then
         require('packer').sync()
     end
